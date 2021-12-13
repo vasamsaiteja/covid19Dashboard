@@ -1,0 +1,79 @@
+.unordered-list-container {
+  position: relative;
+  width: 360px;
+  height: 640px;
+  background-color: #161625;
+  display: flex;
+}
+.home-tab {
+  position: absolute;
+  left: 8.89%;
+  right: 79.44%;
+  top: 12.5%;
+  bottom: 83.44%;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  /* identical to box height, or 162% */
+
+  letter-spacing: -0.355556px;
+
+  /* Light / blue-gray / 400 */
+
+  color: #94a3b8;
+  list-style-type: none;
+  width: 42px;
+  height: 26px;
+  top: 80px;
+  left: 32px;
+}
+.about-tab {
+  position: absolute;
+  left: 27.22%;
+  right: 61.11%;
+  top: 12.5%;
+  bottom: 83.44%;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  /* identical to box height, or 162% */
+
+  letter-spacing: -0.355556px;
+
+  /* Light / blue-gray / 400 */
+
+  color: #94a3b8;
+  list-style-type: none;
+  width: 42px;
+  height: 26px;
+  top: 80px;
+  left: 98px;
+}
+.cross-button {
+  position: absolute;
+  left: 86.67%;
+  right: 6.67%;
+  top: 12.66%;
+  bottom: 83.59%;
+  width: 24px;
+  height: 24px;
+  top: 81px;
+  left: 312px;
+}
+.cross-icon {
+  position: absolute;
+  left: 8.33%;
+  right: 8.33%;
+  top: 8.33%;
+  bottom: 8.33%;
+  height: 20px;
+  width: 20px;
+  top: 2px;
+  left: 2px;
+}
