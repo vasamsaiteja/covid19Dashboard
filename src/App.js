@@ -1,4 +1,4 @@
-import Header from './components/Header'
+import Home from './components/Home'
 
 import './App.css'
 
@@ -149,6 +149,6 @@ const statesList = [
   },
 ]
 
-const App = () => <Header />
+const App = () => <Home />
 
 export default App
