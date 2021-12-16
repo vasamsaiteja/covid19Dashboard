@@ -1,7 +1,8 @@
 .home-container {
-  position: relative;
-  width: 360px;
-  height: 2769px;
+  min-width: 360px;
+  width: 100vw;
+  /* padding: 0 20px; */
+  min-height: 100vh;
   /* display: flex;
   flex-direction: column; */
   background: #161625;
@@ -11,8 +12,6 @@
 }
 @media screen and (min-width: 768px) {
   .home-container {
-    position: relative;
-    width: 1440px;
-    height: 3037px;
+    /* padding: 0 30px; */
   }
 }

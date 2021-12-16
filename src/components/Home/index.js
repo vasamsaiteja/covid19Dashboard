@@ -3,11 +3,17 @@ import GetCountryStats from '../GetCountryStats'
 
 import './index.css'
 
-const Home = () => (
-  <div className="home-container">
-    <Header />
-    <GetCountryStats />
-  </div>
-)
+const Home = props => {
+  const {statesList} = props
+
+  return (
+    <>
+      <Header />
+      <div className="home-container">
+        <GetCountryStats statesList={statesList} />
+      </div>
+    </>
+  )
+}
 
 export default Home

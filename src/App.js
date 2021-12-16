@@ -1,4 +1,5 @@
 import Home from './components/Home'
+// import Header from './components/Header'
 
 import './App.css'
 
@@ -149,6 +150,6 @@ const statesList = [
   },
 ]
 
-const App = () => <Home />
+const App = () => <Home statesList={statesList} />
 
 export default App
