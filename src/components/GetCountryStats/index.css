@@ -4,8 +4,8 @@
   justify-content: flex-start;
   align-items: center;
   border: 1px solid red;
-  position: relative;
-  top: 140px;
+  /* position: relative;
+  top: 140px; */
 }
 .search-container {
   background-color: #2f2f43;
@@ -16,10 +16,13 @@
   align-items: center;
   width: 57.22%;
   height: 72px;
+  position: relative;
+  top: 80px;
 }
 @media screen and (max-width: 600px) {
   .search-container {
     width: 90%;
+    top: 120px;
   }
 }
 .search-icon {
@@ -39,4 +42,12 @@
   width: 90%;
   padding-right: 20px;
   color: #94a3b8;
+}
+.unordered-list {
+  top: 90px;
+  position: relative;
+  list-style-type: none;
+  width: 57.22%;
+  margin-bottom: 64px;
+  border: 1px solid yellow;
 }
