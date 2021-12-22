@@ -1,12 +1,47 @@
 import {Component} from 'react'
 import {BsSearch} from 'react-icons/bs'
 import StateProfile from '../StateProfile'
+import EachStateDetails from '../EachStateDetails'
 
 import './index.css'
 
 class GetCountryStats extends Component {
   state = {
     searchInput: '',
+    statesDetails: {},
+  }
+
+  componentDidMount() {
+    this.getStateData()
+  }
+
+  getStateData = async () => {
+    const response = await fetch('https://apis.ccbp.in/covid19-state-wise-data')
+    if (response.ok) {
+      const fetchedData = await response.json()
+      this.setState({
+        statesDetails: fetchedData,
+      })
+    }
+  }
+
+  renderTotalCases = () => {
+    const {statesDetails} = this.state
+    const keyNames = Object.keys(statesDetails)
+    const filteredKeyName = keyNames.filter(each => each === 'TT')
+
+    // const {total} =
+
+    // const {total} = statesDetails[filteredKeyName]
+    // console.log(total)
+    // const {total} = statesDetails.TT
+    // console.log(total)
+
+    return (
+      <div>
+        <h1>Hello,world</h1>
+      </div>
+    )
   }
 
   onSearchValue = event => {
@@ -14,7 +49,7 @@ class GetCountryStats extends Component {
   }
 
   renderUnorderedList = () => {
-    const {searchInput} = this.state
+    const {searchInput, statesDetails} = this.state
     const {statesList} = this.props
     const formattedList = statesList.map(each => ({
       stateCode: each.state_code,
@@ -32,7 +67,15 @@ class GetCountryStats extends Component {
         </ul>
       )
     }
-    return ''
+    return (
+      <>
+        {this.renderTotalCases()}
+        <EachStateDetails
+          statesDetails={statesDetails}
+          formattedList={formattedList}
+        />
+      </>
+    )
   }
 
   renderSearchResults = () => (
