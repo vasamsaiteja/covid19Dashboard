@@ -1,7 +1,9 @@
 import {Component} from 'react'
 import {BsSearch} from 'react-icons/bs'
+import {TiTick} from 'react-icons/ti'
 import StateProfile from '../StateProfile'
 import EachStateDetails from '../EachStateDetails'
+import CountryStats from '../CountryStats'
 
 import './index.css'
 
@@ -9,6 +11,7 @@ class GetCountryStats extends Component {
   state = {
     searchInput: '',
     statesDetails: {},
+    isLoading: false,
   }
 
   componentDidMount() {
@@ -21,27 +24,54 @@ class GetCountryStats extends Component {
       const fetchedData = await response.json()
       this.setState({
         statesDetails: fetchedData,
+        // isLoading: true,
       })
+      console.log('fetchedData', fetchedData)
     }
   }
 
   renderTotalCases = () => {
-    const {statesDetails} = this.state
+    const {statesDetails, isLoading} = this.state
     const keyNames = Object.keys(statesDetails)
     const filteredKeyName = keyNames.filter(each => each === 'TT')
-
+    console.log('filteredKeyName', filteredKeyName)
     // const {total} =
 
-    // const {total} = statesDetails[filteredKeyName]
-    // console.log(total)
-    // const {total} = statesDetails.TT
-    // console.log(total)
+    if (statesDetails[filteredKeyName] !== undefined) {
+      const {total} = statesDetails[filteredKeyName]
+      console.log('total', total)
+      const {confirmed, recovered, deceased} = total
+      const active = confirmed - (deceased + recovered)
+      const statsList = [
+        {
+          title: 'Confirmed',
+          count: confirmed,
+          icon: <TiTick />,
+          color: 'red',
+        },
+        {
+          title: 'Confirmed',
+          count: confirmed,
+          icon: <TiTick />,
+          color: 'red',
+        },
+        {
+          title: 'Confirmed',
+          count: confirmed,
+          icon: <TiTick />,
+          color: 'red',
+        },
+        {
+          title: 'Confirmed',
+          count: confirmed,
+          icon: <TiTick />,
+          color: 'red',
+        },
+      ]
+      return <>{!isLoading && <CountryStats statsList={statsList} />}</>
+    }
 
-    return (
-      <div>
-        <h1>Hello,world</h1>
-      </div>
-    )
+    return ''
   }
 
   onSearchValue = event => {

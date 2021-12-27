@@ -51,7 +51,7 @@ span {
   align-items: center;
 
   width: 100%;
-  /* background: #1e1e30; */
+  background: #1e1e30;
   padding: 0 20px;
   height: 80px;
   transition: all 1s ease-in;

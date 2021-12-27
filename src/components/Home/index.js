@@ -7,12 +7,12 @@ const Home = props => {
   const {statesList} = props
 
   return (
-    <>
+    <div className="main-container">
       <Header />
       <div className="home-container">
         <GetCountryStats statesList={statesList} />
       </div>
-    </>
+    </div>
   )
 }
 

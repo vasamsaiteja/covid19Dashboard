@@ -1,0 +1,16 @@
+.country-stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 75%; */
+  flex-wrap: wrap;
+  border: 1px solid green;
+}
+
+.states-container {
+  align-items: center;
+  min-width: 120px;
+  margin: 0 12px;
+  border: 1px solid red;
+}
