@@ -1,0 +1,76 @@
+.states-table {
+  border: 1px solid pink;
+  width: 80%;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.states-table-container {
+  width: 100%;
+  background: #1e1e30;
+  border: 1px solid #475569;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+  border-radius: 12px;
+  align-self: flex-start;
+}
+@media screen and (max-width: 600px) {
+  .states-table-container {
+    width: 800px;
+    overflow-x: auto;
+  }
+}
+.state-table-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #475569;
+  height: 72px;
+}
+.state-name {
+  width: 22%;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #f8fafc;
+}
+.sort-icon {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  outline: none;
+  align-self: center;
+  margin-top: 10px;
+  margin-left: 5px;
+  /* border: 1px solid red; */
+}
+.stat-container {
+  width: 15.6%;
+}
+.paragraph-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #f8fafc;
+}
+.all-states-details-container {
+  display: flex;
+  flex-direction: column;
+}
+.unordered-list-container {
+  padding: 0px;
+}

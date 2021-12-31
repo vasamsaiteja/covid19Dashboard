@@ -8,15 +8,22 @@ class CountryStats extends Component {
 
     return (
       <>
-        <div style={{zIndex: 100}} className="country-stats">
+        <div className="country-stats">
           {statsList.map(eachStat => (
-            <div>
-              <p>{eachStat.title}</p>
-              {eachStat.icon}
-              <p>{eachStat.count}</p>
+            <div
+              key={eachStat.title}
+              testid="countryWideConfirmedCases"
+              className="each-country-stat"
+            >
+              <h1 className={eachStat.color}>{eachStat.title}</h1>
+              <img
+                src={eachStat.url}
+                alt={eachStat.alt}
+                className="stat-icon"
+              />
+              <p className={eachStat.color}>{eachStat.count}</p>
             </div>
           ))}
-          {/* <h1>hkjd</h1> */}
         </div>
       </>
     )

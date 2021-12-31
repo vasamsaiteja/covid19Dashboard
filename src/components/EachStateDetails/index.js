@@ -1,4 +1,7 @@
 import {Component} from 'react'
+import {FcGenericSortingAsc, FcGenericSortingDesc} from 'react-icons/fc'
+import StateWiseDetails from '../StateWiseDetails'
+import './index.css'
 
 class EachStateDetails extends Component {
   state = {
@@ -49,8 +52,53 @@ class EachStateDetails extends Component {
     const {statesList} = this.state
     console.log('statesList', statesList)
     return (
-      <div>
-        <h1>Welcome to each state Route</h1>
+      <div className="states-table">
+        <div
+          className="states-table-container"
+          testid="stateWiseCovidDataTable"
+        >
+          <div className="state-table-header">
+            <div className="state-name">
+              <p className="title">States/UT</p>
+              <button
+                type="button"
+                testid="ascendingSort"
+                className="sort-icon"
+              >
+                <FcGenericSortingAsc />
+              </button>
+              <button
+                type="button"
+                testid="ascendingSort"
+                className="sort-icon"
+              >
+                <FcGenericSortingDesc />
+              </button>
+            </div>
+            <div className="stat-container">
+              <p className="paragraph-title">Confirmed</p>
+            </div>
+            <div className="stat-container">
+              <p className="paragraph-title">Active</p>
+            </div>
+            <div className="stat-container">
+              <p className="paragraph-title">Recovered</p>
+            </div>
+            <div className="stat-container">
+              <p className="paragraph-title">Deceased</p>
+            </div>
+            <div className="stat-container">
+              <p className="paragraph-title">Population</p>
+            </div>
+          </div>
+          <div className="all-states-details-container">
+            <ul className="unordered-list-container">
+              {statesList.map(each => (
+                <StateWiseDetails stateCount={each} key={each.stateCode} />
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     )
   }

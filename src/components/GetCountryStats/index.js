@@ -1,17 +1,26 @@
 import {Component} from 'react'
+import Loader from 'react-loader-spinner'
 import {BsSearch} from 'react-icons/bs'
-import {TiTick} from 'react-icons/ti'
+// import {IoIosCheckmarkCircleOutline} from 'react-icons/io'
 import StateProfile from '../StateProfile'
 import EachStateDetails from '../EachStateDetails'
 import CountryStats from '../CountryStats'
+import Footer from '../Footer'
 
 import './index.css'
+
+const apiStatusConstants = {
+  initial: 'INITIAL',
+  success: 'SUCCESS',
+  inProgress: 'IN_PROGRESS',
+}
 
 class GetCountryStats extends Component {
   state = {
     searchInput: '',
     statesDetails: {},
-    isLoading: false,
+    // isLoading: false,
+    apiStatus: apiStatusConstants.initial,
   }
 
   componentDidMount() {
@@ -19,19 +28,27 @@ class GetCountryStats extends Component {
   }
 
   getStateData = async () => {
+    this.setState({apiStatus: apiStatusConstants.inProgress})
     const response = await fetch('https://apis.ccbp.in/covid19-state-wise-data')
     if (response.ok) {
       const fetchedData = await response.json()
       this.setState({
         statesDetails: fetchedData,
         // isLoading: true,
+        apiStatus: apiStatusConstants.success,
       })
       console.log('fetchedData', fetchedData)
     }
   }
 
+  renderLoaderView = () => (
+    <div className="loader-container" testid="loader">
+      <Loader type="TailSpin" color="#007BFF" height="80" width="80" />
+    </div>
+  )
+
   renderTotalCases = () => {
-    const {statesDetails, isLoading} = this.state
+    const {statesDetails} = this.state
     const keyNames = Object.keys(statesDetails)
     const filteredKeyName = keyNames.filter(each => each === 'TT')
     console.log('filteredKeyName', filteredKeyName)
@@ -46,29 +63,41 @@ class GetCountryStats extends Component {
         {
           title: 'Confirmed',
           count: confirmed,
-          icon: <TiTick />,
+          url:
+            'https://res.cloudinary.com/saiteja68/image/upload/v1640752561/check-mark_1_x4hzod.png',
+          alt: 'country wide confirmed cases',
           color: 'red',
         },
         {
-          title: 'Confirmed',
-          count: confirmed,
-          icon: <TiTick />,
-          color: 'red',
+          title: 'Active',
+          count: active,
+          url:
+            'https://res.cloudinary.com/saiteja68/image/upload/v1640753367/protection_2_g6m9yj.png',
+          alt: 'country wide confirmed cases',
+          color: 'blue',
         },
         {
-          title: 'Confirmed',
-          count: confirmed,
-          icon: <TiTick />,
-          color: 'red',
+          title: 'Recovered',
+          count: recovered,
+          url:
+            'https://res.cloudinary.com/saiteja68/image/upload/v1640753561/recovered_1_i1ksmu.png',
+          alt: 'country wide confirmed cases',
+          color: 'green',
         },
         {
-          title: 'Confirmed',
-          count: confirmed,
-          icon: <TiTick />,
-          color: 'red',
+          title: 'Deceased',
+          count: deceased,
+          url:
+            'https://res.cloudinary.com/saiteja68/image/upload/v1640753724/breathing_1_tlwcjn.png',
+          alt: 'country wide confirmed cases',
+          color: 'grey',
         },
       ]
-      return <>{!isLoading && <CountryStats statsList={statsList} />}</>
+      return (
+        <>
+          <CountryStats statsList={statsList} />
+        </>
+      )
     }
 
     return ''
@@ -104,6 +133,7 @@ class GetCountryStats extends Component {
           statesDetails={statesDetails}
           formattedList={formattedList}
         />
+        <Footer />
       </>
     )
   }
@@ -124,8 +154,20 @@ class GetCountryStats extends Component {
     </>
   )
 
+  renderAllStats = () => {
+    const {apiStatus} = this.state
+    switch (apiStatus) {
+      case apiStatusConstants.success:
+        return this.renderSearchResults()
+      case apiStatusConstants.inProgress:
+        return this.renderLoaderView()
+      default:
+        return null
+    }
+  }
+
   render() {
-    return <div className="bottom-container">{this.renderSearchResults()}</div>
+    return <div className="bottom-container">{this.renderAllStats()}</div>
   }
 }
 

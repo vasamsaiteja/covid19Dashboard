@@ -1,0 +1,46 @@
+.list-container {
+  list-style-type: none;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.state-name-container {
+  width: 22%;
+}
+.state-paragraph {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: #f1f5f9;
+  padding: 0 32px;
+}
+.confirmed-container {
+  width: 15.6%;
+}
+.stats-state {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+}
+.confirmed-cases {
+  color: #ff073a;
+}
+.active-cases {
+  color: #007bff;
+}
+.recovered-cases {
+  color: #28a745;
+}
+.deceased-cases {
+  color: #6c757d;
+}
+.population-cases {
+  color: #94a3b8;
+}

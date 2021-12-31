@@ -6,6 +6,7 @@
   /* width: 75%; */
   flex-wrap: wrap;
   border: 1px solid green;
+  padding: 10px;
 }
 
 .states-container {
@@ -13,4 +14,54 @@
   min-width: 120px;
   margin: 0 12px;
   border: 1px solid red;
+}
+.red {
+  color: #ff073a;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}
+/* .paragraph {
+  font-family: 'Roboto';
+} */
+.blue {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #007bff;
+}
+.green {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #28a745;
+}
+.grey {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #6c757d;
+}
+h1 {
+  margin-bottom: 10px;
+}
+p {
+  margin-top: 10px;
+}
+
+.each-country-stat {
+  text-align: center;
+  min-width: 120px;
+  margin: 0 10px;
+}
+.stat-icon {
+  font-size: 40px;
 }
