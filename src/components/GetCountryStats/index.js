@@ -42,7 +42,7 @@ class GetCountryStats extends Component {
   }
 
   renderLoaderView = () => (
-    <div className="loader-container" testid="loader">
+    <div className="loader-container" testid="homeRouteLoader">
       <Loader type="TailSpin" color="#007BFF" height="80" width="80" />
     </div>
   )
@@ -65,32 +65,36 @@ class GetCountryStats extends Component {
           count: confirmed,
           url:
             'https://res.cloudinary.com/saiteja68/image/upload/v1640752561/check-mark_1_x4hzod.png',
-          alt: 'country wide confirmed cases',
+          alt: 'country wide confirmed cases pic',
           color: 'red',
+          testId: 'countryWideConfirmedCases',
         },
         {
           title: 'Active',
           count: active,
           url:
             'https://res.cloudinary.com/saiteja68/image/upload/v1640753367/protection_2_g6m9yj.png',
-          alt: 'country wide confirmed cases',
+          alt: 'country wide active cases pic ',
           color: 'blue',
+          testId: 'countryWideActiveCases',
         },
         {
           title: 'Recovered',
           count: recovered,
           url:
             'https://res.cloudinary.com/saiteja68/image/upload/v1640753561/recovered_1_i1ksmu.png',
-          alt: 'country wide confirmed cases',
+          alt: 'country wide recovered cases pic',
           color: 'green',
+          testId: 'countryWideRecoveredCases',
         },
         {
           title: 'Deceased',
           count: deceased,
           url:
             'https://res.cloudinary.com/saiteja68/image/upload/v1640753724/breathing_1_tlwcjn.png',
-          alt: 'country wide confirmed cases',
+          alt: 'country wide deceased cases pic',
           color: 'grey',
+          testId: 'countryWideDeceasedCases',
         },
       ]
       return (

@@ -12,10 +12,10 @@ class CountryStats extends Component {
           {statsList.map(eachStat => (
             <div
               key={eachStat.title}
-              testid="countryWideConfirmedCases"
+              testid={eachStat.testId}
               className="each-country-stat"
             >
-              <h1 className={eachStat.color}>{eachStat.title}</h1>
+              <p className={eachStat.color}>{eachStat.title}</p>
               <img
                 src={eachStat.url}
                 alt={eachStat.alt}

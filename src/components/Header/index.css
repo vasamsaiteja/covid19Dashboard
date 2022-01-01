@@ -79,3 +79,9 @@ span {
     display: block;
   }
 }
+.link-item {
+  text-decoration: none;
+}
+.link-name {
+  color: #f8fafc;
+}

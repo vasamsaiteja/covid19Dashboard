@@ -1,0 +1,64 @@
+.bottom-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* border: 1px solid blue; */
+  margin-top: 80px;
+  background: #161625;
+  padding-bottom: 20px;
+}
+.loading-section {
+  background: #161625;
+}
+.about-container {
+  width: 80%;
+  margin-top: 60px;
+  text-align: left;
+}
+.about-heading {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 64px;
+  color: #f8fafc;
+}
+.about-paragraph {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #94a3b8;
+}
+.about-description {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  color: #e2e8f0;
+}
+.faq-section-container {
+  margin-top: 28px;
+  padding: 0;
+  list-style-type: none;
+}
+.facts-heading {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  color: #e2e8f0;
+  margin-top: 15px;
+}
+.facts-list-container {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 32px;
+  color: #ff073a;
+  margin-bottom: 15px;
+  list-style: disc;
+}

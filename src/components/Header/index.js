@@ -20,7 +20,7 @@ class Header extends Component {
     return (
       <>
         <nav className="nav-container">
-          <Link to="/">
+          <Link to="/" className="link-item">
             <h1 className="nav-logo">
               COVID19<span>INDIA</span>
             </h1>
@@ -35,10 +35,10 @@ class Header extends Component {
           {isOpened && (
             <div className="nav-items-mobile">
               <div>
-                <Link to="/">
+                <Link to="/" className="link-item link-name">
                   <h1 className="lg-home-heading">Home</h1>
                 </Link>
-                <Link to="/about">
+                <Link to="/about" className="link-item link-name">
                   <h1 className="lg-about-heading">About</h1>
                 </Link>
               </div>
@@ -47,10 +47,10 @@ class Header extends Component {
           )}
 
           <div className="nav-items-container">
-            <Link to="/">
+            <Link to="/" className="link-item link-name">
               <h1>Home</h1>
             </Link>
-            <Link to="/about">
+            <Link to="/about" className="link-item link-name">
               <h1>About</h1>
             </Link>
           </div>

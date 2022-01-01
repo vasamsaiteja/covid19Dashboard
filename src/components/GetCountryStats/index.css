@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   /* position: relative;
   top: 140px; */
   margin-top: 80px;
@@ -48,7 +48,7 @@
   list-style-type: none;
   width: 57.22%;
   margin-bottom: 64px;
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
 }
 .country-stats {
   display: flex;
